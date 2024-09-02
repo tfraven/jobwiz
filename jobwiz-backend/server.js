@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
+const authRoutes = require('./routes/auth')
+
 dotenv.config();
 
 const app = express();
@@ -20,7 +22,9 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch(err => console.log(err));
 
 app.get('/', (req, res) => {
-  res.send('Hello, MERN Stack!');
+  res.send('Welcome to jobwiz');
 });
+
+app.use('/api/auth', authRoutes);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
