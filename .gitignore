@@ -1,0 +1,4 @@
+/jobwiz-ui/node_modules
+/jobwiz-backend/node_modules
+/jobwiz-ui/.env
+/jobwiz-backend/.env
